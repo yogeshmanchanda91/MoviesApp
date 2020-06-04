@@ -1,0 +1,24 @@
+<div class="list-group-item">
+  <div class="row">
+    <div class="col-md-4 col-xs-2">
+      <div class="float-left" style="padding: 0; margin: 0;">
+        <h2 class="list-group-item-heading" style="padding: 0; margin: 0;">{{movie.name}}</h2>
+      <p class="list-group-item-text" style="padding: 0; margin: 0;"> <fa-icon [icon]="faStar" class="star"></fa-icon>  {{movie.rating}}</p>
+      <p class="list-group-item-text" style="padding: 0; margin: 0;"><fa-icon [icon]="faVideo" class="video"></fa-icon>  {{movie.genre}}</p>
+      </div>
+    </div>
+    <div class="col-md-1 col-xs-2">
+      <img src="{{movie.imagePath}}" alt="{{movie.name}}" class="img-responsive" style="max-height: 80px; max-width: 100px;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-4">
+      <label for="date"><h3 style="display: inline;">Date to watch:</h3></label>
+      <input type="date" id="date">
+    </div>
+    <div class="col-md-3 col-sm-3">
+    <button mat-raised-button color="primary"
+    (click)="onDelete()"
+    style="height: 60px; width: 150px; margin-top: 10px;">Remove from list</button>
+    </div>
+  </div>
+</div>
+

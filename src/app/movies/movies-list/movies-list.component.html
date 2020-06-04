@@ -1,0 +1,14 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-xs-12">
+    <button mat-raised-button color="primary"
+      (click)="onNewMovie()" style="width: 150px; height: 45px;" id="listButton" >Add a new Movie</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12" style="align-items: center;" >
+    <app-movie-item *ngFor="let movieEl of movies; let i=index"
+      [movie]="movieEl"
+      [index]="i" ></app-movie-item>
+  </div>
+</div>
+

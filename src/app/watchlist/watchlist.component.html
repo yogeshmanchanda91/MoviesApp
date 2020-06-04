@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="startingMessage">Select a movie from Movies list</h2>
+    <app-watchlist-new *ngFor="let movieEl of watchlistArray; let i=index"
+      [index]="i" [movie]="movieEl"></app-watchlist-new>
+  </div>
+</div>

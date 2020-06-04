@@ -1,0 +1,27 @@
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.80);
+  z-index: 50;
+}
+
+.alert-box{
+  position: fixed;
+  top: 20vw;
+  left: 35vw;
+  width: 30vw;
+  padding: 20px;
+  background: white;
+  z-index: 100;
+}
+
+.alert-box-actions{
+  text-align: right;
+}
+
+button{
+  margin-left: 20px;
+}

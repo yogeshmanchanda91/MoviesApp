@@ -1,0 +1,24 @@
+<div class="list-group-item eachItem" routerLinkActive="activeClass" style="margin: 20px; text-align: center;">
+  <mat-card class="example-card">
+    <div style="margin-bottom: 7px;">
+      <h2 style="padding: 0px; margin: 0px;">{{movie.name}}</h2>
+    </div>
+    <img mat-card-image [src]="movie.imagePath" alt="{{movie.name}}" class="img-responsive" style="height: 150px; max-width: 165px; margin: 0;">
+    <mat-card-content style="display: inline;">
+      <h3 style="font-weight:500;"><fa-icon [icon]="faStar" class="star"></fa-icon>
+        Rating: {{movie.rating}}</h3>
+    </mat-card-content>
+    <mat-card-content style="display: inline;">
+      <h3 style="font-weight:500;"><fa-icon [icon]="faVideo" class="video"></fa-icon>
+        Genre: {{movie.genre}}</h3>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button
+        style="cursor: pointer;"
+        type="button"
+        [routerLink]="[index]"
+        routerLinkActive="active" class="eachButton">Description</button>
+      <button mat-raised-button style="cursor: pointer;" (click)="addToWatchlist()" class="eachButton">Add to Watchlist</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,44 @@
+<h2 style="text-decoration: underline; margin-top: 15px; text-align: center; font-weight: 500; " *ngIf="!editMode">Lets add a new movie!!!</h2>
+<h2 style="margin-top: 15px; text-align: center; font-weight: 500;" *ngIf="editMode">Editing - <span style="text-decoration: underline;">{{editedMovie.name}}</span></h2>
+<form class="example-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <app-alert *ngIf="confirmSaving" (save)="onConfirmSave()" (cancel)="onCancelSaving()"></app-alert>
+  <mat-form-field class="example-full-width">
+    <mat-label>Movie Name</mat-label>
+    <input matInput type="text" name="name" ngModel required>
+  </mat-form-field>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Star Rating</mat-label>
+      <input matInput type="number" name="rating" ngModel required pattern="[0-9]{1,1}\.[0-9]{1,1}" placeholder="Ex. 8.3, 7.5">
+      <mat-hint align="end">Format = digit.digit</mat-hint>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Genre</mat-label>
+      <input matInput type="text" name="genre" ngModel required>
+    </mat-form-field></td>
+  </tr></table>
+  <p>
+    <mat-form-field class="example-full-width">
+      <mat-label>Actors</mat-label>
+      <input matInput type="text" name="actors" ngModel required ngModelGroup="descriptionGroup" #descriptionGroup="ngModelGroup">
+    </mat-form-field>
+  </p>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Release Year</mat-label>
+      <input matInput type="number" placeholder="Release Year" name="releaseYear" ngModel required ngModelGroup="descriptionGroup" #descriptionGroup="ngModelGroup">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Image URL</mat-label>
+      <input matInput placeholder="Image URL" name="imagePath" ngModel required #imagePathTemp>
+    </mat-form-field></td>
+  </tr></table>
+  <mat-form-field class="example-full-width">
+    <mat-label>Description</mat-label>
+    <textarea matInput ngModelGroup="descriptionGroup" #descriptionGroup="ngModelGroup" name="plot" ngModel required rows="3"></textarea>
+  </mat-form-field>
+  <img [src]="imagePathTemp.value" class="img-responsive example-full-width" style="max-width: 500px; max-height: 550px; display: block;">
+  <br>
+  <button mat-raised-button color="accent" type="submit" [disabled]="!f.valid" style="margin-right: 20px;">Save</button>
+  <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+</form>

@@ -1,0 +1,41 @@
+div{
+  border: 2px solid #673ab7;
+}
+
+.mat-card{
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0);
+  border-radius: 5%;
+}
+
+.example-card {
+  max-width: 500px;
+}
+
+.star{
+  color: gold;
+}
+
+.video{
+  color: purple;
+}
+
+.eachItem:hover{
+  background-color:#673ab7;
+}
+
+.eachItem{
+  border-radius: 15%;
+}
+
+.eachButton{
+  margin: 20px;
+}
+
+.eachButton:hover{
+  background-color: #673ab7;
+  color: white;
+}
+
+.activeClass{
+  background-color: #2f4f4f;
+}
